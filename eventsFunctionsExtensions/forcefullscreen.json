@@ -1,0 +1,68 @@
+{
+  "author": "",
+  "category": "",
+  "extensionNamespace": "",
+  "fullName": "",
+  "gdevelopVersion": "",
+  "helpPath": "",
+  "iconUrl": "",
+  "name": "ForceFullscreen",
+  "previewIconUrl": "",
+  "shortDescription": "",
+  "version": "",
+  "description": "",
+  "tags": [],
+  "authorIds": [],
+  "dependencies": [],
+  "globalVariables": [],
+  "sceneVariables": [],
+  "eventsFunctions": [
+    {
+      "description": "ForceFullscreen",
+      "fullName": "ForceFullscreen",
+      "functionType": "Action",
+      "name": "Function",
+      "sentence": "ForceFullscreen",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "AdvancedWindow::EnableWindow"
+              },
+              "parameters": [
+                "yes",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "AdvancedWindow::SetKiosk"
+              },
+              "parameters": [
+                "yes",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "SetFullScreen"
+              },
+              "parameters": [
+                "yes",
+                "yes",
+                ""
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": [],
+  "eventsBasedObjects": []
+}
