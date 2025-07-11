@@ -9,7 +9,7 @@
   "title": "",
   "v": 0,
   "uiSettings": {
-    "grid": false,
+    "grid": true,
     "gridType": "rectangular",
     "gridWidth": 32,
     "gridHeight": 32,
@@ -17,11 +17,20 @@
     "gridOffsetY": 0,
     "gridColor": 10401023,
     "gridAlpha": 0.8,
-    "snap": false,
-    "zoomFactor": 0.5290357402156838,
+    "snap": true,
+    "zoomFactor": 0.5117784035210183,
     "windowMask": false
   },
-  "objectsGroups": [],
+  "objectsGroups": [
+    {
+      "name": "objects",
+      "objects": [
+        {
+          "name": "title"
+        }
+      ]
+    }
+  ],
   "variables": [],
   "instances": [
     {
@@ -30,12 +39,29 @@
       "height": 0,
       "keepRatio": true,
       "layer": "",
-      "name": "placeholder",
+      "name": "title",
+      "opacity": 128,
       "persistentUuid": "70dd4f00-d88a-44be-9607-528f695d43c2",
       "width": 0,
-      "x": 580,
-      "y": 342,
+      "x": -10,
+      "y": 41,
       "zOrder": 1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "keepRatio": true,
+      "layer": "",
+      "name": "play",
+      "persistentUuid": "dd159b2b-8d93-4a53-819d-eb84af3e03d5",
+      "width": 0,
+      "x": 544,
+      "y": 226,
+      "zOrder": 2,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -46,17 +72,17 @@
       "assetStoreId": "",
       "bold": false,
       "italic": false,
-      "name": "placeholder",
+      "name": "title",
       "smoothed": true,
       "type": "TextObject::Text",
       "underlined": false,
       "variables": [],
       "effects": [],
       "behaviors": [],
-      "string": "Text",
-      "font": "",
+      "string": "title-to-be-determined",
+      "font": "VCR_OSD_MONO_1.001.ttf",
       "textAlignment": "center",
-      "characterSize": 50,
+      "characterSize": 100,
       "color": {
         "b": 255,
         "g": 255,
@@ -76,11 +102,53 @@
         "shadowOpacity": 127,
         "smoothed": true,
         "underlined": false,
-        "text": "Text",
-        "font": "",
+        "text": "title-to-be-determined",
+        "font": "VCR_OSD_MONO_1.001.ttf",
         "textAlignment": "center",
         "verticalTextAlignment": "center",
-        "characterSize": 50,
+        "characterSize": 100,
+        "color": "255;255;255"
+      }
+    },
+    {
+      "assetStoreId": "",
+      "bold": false,
+      "italic": false,
+      "name": "play",
+      "smoothed": true,
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "play",
+      "font": "VCR_OSD_MONO_1.001.ttf",
+      "textAlignment": "center",
+      "characterSize": 75,
+      "color": {
+        "b": 255,
+        "g": 255,
+        "r": 255
+      },
+      "content": {
+        "bold": false,
+        "isOutlineEnabled": false,
+        "isShadowEnabled": false,
+        "italic": false,
+        "outlineColor": "255;255;255",
+        "outlineThickness": 2,
+        "shadowAngle": 90,
+        "shadowBlurRadius": 2,
+        "shadowColor": "0;0;0",
+        "shadowDistance": 4,
+        "shadowOpacity": 127,
+        "smoothed": true,
+        "underlined": false,
+        "text": "play",
+        "font": "VCR_OSD_MONO_1.001.ttf",
+        "textAlignment": "center",
+        "verticalTextAlignment": "center",
+        "characterSize": 75,
         "color": "255;255;255"
       }
     }
@@ -89,35 +157,19 @@
     "folderName": "__ROOT",
     "children": [
       {
-        "objectName": "placeholder"
+        "folderName": "Buttons",
+        "children": [
+          {
+            "objectName": "play"
+          }
+        ]
+      },
+      {
+        "objectName": "title"
       }
     ]
   },
   "events": [
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "DepartScene"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "ForceFullscreen::Function"
-          },
-          "parameters": [
-            "",
-            ""
-          ]
-        }
-      ]
-    },
     {
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
@@ -150,6 +202,105 @@
           ]
         }
       ]
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "onstart",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Store local exentions"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ForceFullscreen::Function"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "Placement"
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "title",
+                    "=",
+                    "ScreenWidth()/2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCenterX"
+                  },
+                  "parameters": [
+                    "play",
+                    "=",
+                    "ScreenWidth()/2"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   ],
   "layers": [

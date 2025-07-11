@@ -90,7 +90,15 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "file": "VCR_OSD_MONO_1.001.ttf",
+        "kind": "font",
+        "metadata": "",
+        "name": "VCR_OSD_MONO_1.001.ttf",
+        "userAdded": false
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
